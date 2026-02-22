@@ -5,6 +5,12 @@ import Editor from "./Editor";
 import StatusBar from "./StatusBar";
 import Tabs from "./Tabs";
 import MenuBar from "./MenuBar";
+import {
+  ABOUT_CONTENT,
+  PROJECTS_CONTENT,
+  CONTACT_CONTENT,
+  SECRET_CONTENT,
+} from "@/constants/notes";
 
 interface Note {
   id: string;
@@ -17,29 +23,44 @@ export default function NotesApp() {
     {
       id: "about",
       label: "about.txt",
-      content: `Hi, I'm Sofía Jiménez.
-            Full-Stack Developer
-            AI Engineer
-            System Builder`,
+      content: ABOUT_CONTENT,
     },
     {
       id: "projects",
       label: "projects.txt",
-      content: `Projects:
-              - SofIA
-              - LXP Platform
-              - AI Experiments`,
+      content: PROJECTS_CONTENT,
     },
     {
       id: "contact",
       label: "contact.txt",
-      content: `Email:
-                GitHub:
-                LinkedIn:`,
+      content: CONTACT_CONTENT,
     },
   ];
 
-  const [notes, setNotes] = useState(initialNotes);
+  const allNotes: Note[] = [
+    {
+      id: "about",
+      label: "about.txt",
+      content: ABOUT_CONTENT,
+    },
+    {
+      id: "projects",
+      label: "projects.txt",
+      content: PROJECTS_CONTENT,
+    },
+    {
+      id: "contact",
+      label: "contact.txt",
+      content: CONTACT_CONTENT,
+    },
+    {
+      id: "secretnote",
+      label: "secretnote.txt",
+      content: SECRET_CONTENT,
+    },
+  ];
+
+  const [notes, setNotes] = useState(allNotes);
   const [openTabs, setOpenTabs] = useState(initialNotes.map((n) => n.id));
   const [active, setActive] = useState(initialNotes[0].id);
 
@@ -82,9 +103,11 @@ export default function NotesApp() {
     const end = textarea.selectionEnd;
     const text = textarea.value;
 
-    textarea.value = text.substring(0, start) + formatted + text.substring(end);
+    const updated = text.substring(0, start) + formatted + text.substring(end);
 
-    textarea.dispatchEvent(new Event("input", { bubbles: true }));
+    setNotes((prev) =>
+      prev.map((n) => (n.id === active ? { ...n, content: updated } : n)),
+    );
   };
 
   return (
@@ -107,19 +130,28 @@ export default function NotesApp() {
       />
 
       <div className="flex-1 overflow-hidden">
-        <Editor
-          value={currentNote.content}
-          onChange={(value) => {
-            setNotes((prev) =>
-              prev.map((n) => (n.id === active ? { ...n, content: value } : n)),
-            );
-          }}
-          onCursorChange={(l, c, ch) => {
-            setLine(l);
-            setCol(c);
-            setChars(ch);
-          }}
-        />
+        {openTabs.length === 0 ? (
+          <div className="text-center">
+            Do something fun rather than closing all tabs. Try in "File" to open
+            recent notes
+          </div>
+        ) : (
+          <Editor
+            value={currentNote.content}
+            onChange={(value) => {
+              setNotes((prev) =>
+                prev.map((n) =>
+                  n.id === active ? { ...n, content: value } : n,
+                ),
+              );
+            }}
+            onCursorChange={(l, c, ch) => {
+              setLine(l);
+              setCol(c);
+              setChars(ch);
+            }}
+          />
+        )}
       </div>
 
       <StatusBar line={line} col={col} chars={chars} />

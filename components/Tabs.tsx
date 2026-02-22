@@ -12,7 +12,7 @@ interface Props {
 
 export default function Tabs({ tabs, active, setActive, closeTab }: Props) {
   return (
-    <div className="flex border-b bg-gray-200">
+    <div className="flex border-b bg-gray-200 overflow-y-auto">
       {tabs.map((tab) => (
         <div
           key={tab.id}

@@ -105,7 +105,7 @@ Well that was easy, you just got rick rolled in a notes portfolio app, congrats!
 `;
 
 export const IDEAS_TEXT = `
-This is another secret note, congrats on being iddle for 20 seconds and finding it!
+This is another secret note, congrats on being here for 20 seconds and finding it!
 Here I will be writing all my ideas for projects, startups, apps, etc. that I want to build in the future,
 so stay tuned for some cool stuff :)`;
 

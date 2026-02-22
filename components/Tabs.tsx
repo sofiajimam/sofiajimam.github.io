@@ -21,12 +21,13 @@ export default function Tabs({ tabs, active, setActive, closeTab }: Props) {
           `}
           onClick={() => setActive(tab.id)}
         >
-          <span>
-            {tab.label}
-          </span>
+          <span>{tab.label}</span>
 
           <button
-            onClick={() => closeTab(tab.id)}
+            onClick={(e) => {
+              e.stopPropagation();
+              closeTab(tab.id);
+            }}
             className="ml-2 px-1 text-sm font-bold text-gray-600 hover:text-black hover:bg-gray-300 rounded cursor-pointer"
           >
             ×

@@ -10,7 +10,7 @@ Hi, I'm Sofía Jiménez, a passionate AI Full-Stack Developer with a knack for b
 
 Also, funny thing, the application that I used daily is Notes, so I thought it would be fun to build my portfolio as a notes app! Feel free to explore every secret it has :)
 
-Btw, this is not a regular notes app, if you want assistance, just ask for it.
+Btw, this is not a regular notes app, if you want **h-e-l-p**, just ask for it.
 
 `;
 
@@ -68,7 +68,7 @@ dribbble.com/sofiajimam
 📍 Monterrey, NL, Mexico`;
 
 export const SECRET_CONTENT = `
-Well that was easy, you just got rick rolled in a notes portfolio app, congrats!
+Well, that was easy. You just got rickrolled in a notes portfolio app, congrats!
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣻⣛⣿⣯⣭⣭⣭⣅⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠏⣼⣻⣿⣿⣿⣿⣹⣿⣿⡝⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -111,14 +111,17 @@ so stay tuned for some cool stuff :)`;
 
 
 export const HELP_TEXT = `
-COMMANDS
+KEYWORDS
 ----------------
 :help - Show this help message
 :music - Show my favorite music playlist
-:whoisofia - Show information about Sofía
+:whoissofia - Show information about Sofía
 :coolai : ✌(-‿-)✌
 
-:...
+---------
+Also these keywords won't work here, try them on another note:)
+
+And once each note is discovered, you can access them all in "File" menu.
 `;
 
 export const WHOAMI_TEXT = `

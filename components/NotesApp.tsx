@@ -94,7 +94,7 @@ export default function NotesApp() {
       discovered: false,
     },
     {
-      id: "whoisofia",
+      id: "whoissofia",
       label: "whoissofia.txt",
       content: WHOAMI_TEXT,
       opened: false,
@@ -159,7 +159,7 @@ export default function NotesApp() {
 
     const commands = [
       { keyword: "help", note: "help" },
-      { keyword: "whoisofia", note: "whoisofia" },
+      { keyword: "whoissofia", note: "whoissofia" },
       { keyword: "music", note: "music" },
       { keyword: "coolai", note: "ai" }
     ];
@@ -221,7 +221,7 @@ export default function NotesApp() {
       <div className="relative px-4 py-2 border-b bg-gray-200 text-sm">
         Cool Notepad — Portfolio
         <div className="absolute right-4 top-2 text-xs text-gray-600">
-          Notes discovered: {openedNotesCount}/{totalNotesCount}
+          Discovered: {openedNotesCount}/{totalNotesCount}
         </div>
       </div>
       <MenuBar
@@ -255,7 +255,7 @@ export default function NotesApp() {
               );
               
               // Check the current note is not the command note to avoid infinite loop
-              if (!["help", "whoisofia", "music", "ai"].includes(currentNote.id)) {
+              if (!["help"].includes(currentNote.id)) {
                 handleCommands(value);
               }
             }}
